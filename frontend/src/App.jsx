@@ -193,9 +193,9 @@ function App() {
                 </p>
                 <p>
                   <span className="font-medium text-cyan-400">
-                    AI Predicted Next:
+                    AI Predictive Faults:
                   </span>{" "}
-                  {aiResult.predicted_next.join(", ")}
+                  {aiResult.ai?.faults}
                 </p>
                 <p className="text-xl font-semibold text-center mt-4">
                   🧠 Best Algorithm (AI Recommendation):{" "}
@@ -203,6 +203,15 @@ function App() {
                     {aiResult.ai_recommendation}
                   </span>
                 </p>
+              </div>
+
+              <div className="bg-gray-800/60 p-4 rounded-lg border border-gray-600 mt-4">
+                <h3 className="text-lg font-semibold text-cyan-400 mb-2">
+                  📊 Fault Comparison
+                </h3>
+                <pre className="text-gray-300 text-sm">
+                  {JSON.stringify(aiResult.all_faults, null, 2)}
+                </pre>
               </div>
             </div>
           )}
